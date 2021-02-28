@@ -19,6 +19,10 @@ app.get("/l", (req, res) => {
     uri.searchParams.append("utm_source", "redir");
   }
 
+  if (isPresent(req.query.amount)) {
+    uri.searchParams.append("amount", req.query.amount);
+  }
+
   return res.redirect(uri.toString())
 });
 
